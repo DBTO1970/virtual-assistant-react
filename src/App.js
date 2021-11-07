@@ -1,15 +1,24 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
 import './App.css';
-import Main from './components/Main';
 
 function App() {
   return (
-    <BrowserRouter>
+    
       <div className="App">
-        <Main />
+        <h1>Virtual Assistance!</h1>
+        <nav 
+          style={{
+            borderBottom: 'solid 1px',
+            paddingBottom: '1rem',
+          }}>
+            <Link to="/about">About</Link> |{" "}
+            <Link to="/contact">Contact</Link> | {" "}
+            <Link to="/services">Services</Link>
+          </nav>
+          <Outlet />
       </div>
-    </BrowserRouter>
+    
     
   );
 }
