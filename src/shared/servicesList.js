@@ -17,14 +17,23 @@ let services = [
     },
     {
         number: 2,
+        name: "Accounts",
+        nameLong: "Basic Bookkeeping and Accounting",
+        description:"Invoicing, account data entry, accounts aging, and other general accounting-related tasks",
+        rate: "$25-$50/hour",
+        featured: true        
+    },
+    {
+        number: 3,
         name: "Editing",
         nameLong: "Digital Editing Services",
         description:"Editing of digital media assets including: photo editing, video editing(under 10min TRT), podcast audio editing",
         rate: "$25-$50/hour",
         featured: false        
     },
+    
     {
-        number: 3,
+        number: 4,
         name: "Websites",
         nameLong: "Web-based Site/Application Services",
         description:"Wordpress site creation and administration, basic web site creation and/or maintenance, blog-site creation",

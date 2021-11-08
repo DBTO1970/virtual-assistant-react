@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Button } from "@material-ui/core";
 const ContactForm = () => {
     const [status, setStatus] = useState("Submit");
     const handleSubmit = async (e) => {
@@ -24,21 +24,23 @@ const ContactForm = () => {
     };
     
     return (
-        <form onSubmit={handleSubmit}>
-            <div>
-                <label htmlFor="name">Name:</label>
-                <input type="text" id="name" required />
-            </div>
-            <div>
-                <label htmlFor="email">Email:</label>
-                <input type="email" id="email" required />
-            </div>
-            <div>
-                <label htmlFor="message">Message:</label>
-                <textarea id="message" required />
-            </div>
-            <button type="submit">{status}</button>
-        </form>
+        <div>
+            <form onSubmit={handleSubmit}>
+                <div>
+                    <label htmlFor="name">Name:</label>
+                    <input type="text" id="name" required />
+                </div>
+                <div>
+                    <label htmlFor="email">Email:</label>
+                    <input type="email" id="email" required />
+                </div>
+                <div>
+                    <label htmlFor="message">Message:</label>
+                    <textarea id="message" required />
+                </div>
+                <Button type="submit" style={{backgroundColor: "lightgreen"}}>{status}</Button>
+            </form>
+    </div>
     );
 };
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, Outlet } from "react-router-dom";
 import { getServices } from '../shared/servicesList';
-
+import { Button } from "@material-ui/core";
 
 export default function Services () {
    let services = getServices();
@@ -18,9 +18,7 @@ export default function Services () {
                             style={{ display: "block", margin: "1rem" }}
                             to={`/services/${service.number}`}
                             key={service.number}
-                            >
-                            {service.name}
-                            
+                            ><Button style={{backgroundColor: "lightgreen"}}>{service.name}</Button>
                             </Link></li>
                     ))}
                     </ul>
