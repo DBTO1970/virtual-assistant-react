@@ -8,7 +8,7 @@ import App from "./App";
 import About from './components/About';
 import Contact from './components/Contact';
 import Services from './components/Services';
-import Service from './routes/service';
+import Service from './routes/serviceRoute';
 
 const rootElement = document.getElementById("root");
 
@@ -31,7 +31,6 @@ render(
             />
         </Route>
       </Routes>
-
     </BrowserRouter>,
     rootElement
       

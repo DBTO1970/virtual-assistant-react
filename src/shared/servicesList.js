@@ -1,27 +1,35 @@
 let services = [
     {
         number: 0,
-        name: "General Admin",
+        name: "General",
+        nameLong: "General Administrative Services",
         description: "General administrative tasks, such as inbox management, Excel/spreadsheet creation/updating, scheduling assistance.",
-        rate: "$15/hour"        
+        rate: "$15/hour",
+        featured: true        
     },
     {
         number: 1,
-        name: "Social Media and Marketing",
+        name: "Social",
+        nameLong: "Social Media and Marketing Services",
         description: "creating and scheduling social media posts, e-mail campaign management, HTML e-mail creation and support, survey management and support",
-        rate: "$15-$25/hour"         
+        rate: "$15-$25/hour",
+        featured: false         
     },
     {
         number: 2,
-        name: "Digital Editing",
+        name: "Editing",
+        nameLong: "Digital Editing Services",
         description:"Editing of digital media assets including: photo editing, video editing(under 10min TRT), podcast audio editing",
-        rate: "$25-$50/hour"        
+        rate: "$25-$50/hour",
+        featured: false        
     },
     {
         number: 3,
-        name: "Websites and Applications",
+        name: "Websites",
+        nameLong: "Web-based Site/Application Services",
         description:"Wordpress site creation and administration, basic web site creation and/or maintenance, blog-site creation",
-        rate: "$25-$50/hour"        
+        rate: "$25-$50/hour",
+        featured: true        
     }
 ];
 

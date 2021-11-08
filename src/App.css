@@ -9,8 +9,8 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 30s linear;
-    -webkit-animation: App-logo-spin infinite 30s linear;
+    animation: App-logo-spin infinite alternate 3s linear;
+    -webkit-animation: App-logo-spin infinite alternate 3s linear;
 }
 }
 
@@ -31,9 +31,17 @@
 
 @keyframes App-logo-spin {
   from {
-    transform: rotate(0deg);
-  }
+    transform: rotate(320deg);
+    -webkit-transform: rotate(320deg);
+    -moz-transform: rotate(320deg);
+    -ms-transform: rotate(320deg);
+    -o-transform: rotate(320deg);
+}
   to {
-    transform: rotate(360deg);
-  }
+    transform: rotate(420deg);
+    -webkit-transform: rotate(420deg);
+    -moz-transform: rotate(420deg);
+    -ms-transform: rotate(420deg);
+    -o-transform: rotate(420deg);
+}
 }

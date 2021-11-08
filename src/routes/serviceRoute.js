@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { getService } from "../servicesList";
+import { getService } from "../shared/servicesList";
 
 export default function Service() {
     let params = useParams();
@@ -7,7 +7,7 @@ export default function Service() {
     return (
         <main 
             style={{ padding: "1rem" }}>
-            <h2>{service.name}</h2>
+            <h2>{service.nameLong}</h2>
             <p>{service.description}</p>
             <p>{service.rate}</p>
         </main>

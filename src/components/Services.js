@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Outlet } from "react-router-dom";
-import { getServices } from '../servicesList';
+import { getServices } from '../shared/servicesList';
 
 
 export default function Services () {
@@ -10,18 +10,20 @@ export default function Services () {
                 <nav 
                     style={{
                         borderRight: 'solid 1px',
-                        padding: "1rem"
-                    }}>
+                        padding: "1rem",
+                        
+                    }}><ul style={{ listStyleType: 'none' }}>
                     {services.map(service => (
-                        <Link 
+                        <li><Link 
                             style={{ display: "block", margin: "1rem" }}
                             to={`/services/${service.number}`}
                             key={service.number}
                             >
-                            {service.name}<br />
+                            {service.name}
                             
-                            </Link>
+                            </Link></li>
                     ))}
+                    </ul>
                 </nav>
                 <Outlet />
             </div>
