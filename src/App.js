@@ -1,6 +1,7 @@
 import React from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import './App.css';
+import Footer from './components/Footer';
 import logo from "./shared/assistant.png";
 import Button from "@mui/material/Button";
 import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
@@ -35,6 +36,7 @@ function App() {
         </header>
         
           <Outlet />
+          <Footer />
       </div>
     
     

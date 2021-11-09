@@ -57,7 +57,7 @@ export default function VerticalTabs() {
   return (
       
     <Box
-      sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', height: 224 }}
+      sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', height: 'auto' }}
     >
       <Tabs
         orientation="vertical"
@@ -65,51 +65,51 @@ export default function VerticalTabs() {
         value={value}
         onChange={handleChange}
         aria-label="Vertical tabs"
-        sx={{ borderRight: 1, borderColor: 'divider' }}
+        sx={{ borderRight: 1, borderColor: 'divider', margin: '10px',padding: '5px', textAlign: 'left' }}
       >
-        <Tab label="General Admin" {...a11yProps(0)} />
-        <Tab label="Social Media & Marketing" {...a11yProps(1)} />
-        <Tab label="Bookkeeping & AR/AP" {...a11yProps(2)} />
-        <Tab label="Digital Media Editing" {...a11yProps(3)} />
-        <Tab label="Web-based Application/Site Building" {...a11yProps(4)} />
+        <Tab label=" General " {...a11yProps(0)} />
+        <Tab label=" Social  " {...a11yProps(1)} />
+        <Tab label="Accounts " {...a11yProps(2)} />
+        <Tab label=" Editing " {...a11yProps(3)} />
+        <Tab label="   Web   " {...a11yProps(4)} />
        
       </Tabs>
       {services.map(service => (
-                        <TabPanel 
-                            value={value} 
-                            index={service.number}
-                            style={{ display: "block", margin: "1rem" }}
-                            to={`/services/${service.number}`}
-                            key={service.number}
-                            >
-                            <Card sx={{ minWidth: 275 }}>
-                                <CardContent>
-                                    <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                                    {service.nameLong}
-                                    </Typography>
-                                    <Typography variant="h5" component="div">
-                                    
-                                    </Typography>
-                                    <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                                    {service.rate}
-                                    </Typography>
-                                    <Typography variant="body2">
-                                    {service.description}
-                                    <br />
-                                    </Typography>
-                                </CardContent>
-                                <CardActions>
-                                <Link 
-                                    style={{ display: "block", margin: "1rem" }}
-                                    to={'/contact'}
-                                    key={service.number}
-                                    ><Button size="small">Request a Quote</Button>
-                                    </Link>
-                                    <Outlet />
-                                </CardActions>
-                                </Card>
-                        
-                            </TabPanel>
+        <Box>
+      <TabPanel 
+          value={value} 
+          index={service.number}
+          style={{ display: "block", margin: "1rem" }}
+          to={`/services/${service.number}`}
+          key={service.number}
+          >
+          <Card sx={{ minWidth: 275 }}>
+              
+                  <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                  {service.nameLong}
+                  </Typography>
+                  <CardContent>
+                  <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                  {service.rate}
+                  </Typography>
+                  <Typography variant="body2">
+                  {service.description}
+                  <br />
+                  </Typography>
+              </CardContent>
+              <CardActions>
+              <Link 
+                  style={{ display: "block", margin: "1rem" }}
+                  to={'/contact'}
+                  key={service.number}
+                  ><Button size="small">Request a Quote</Button>
+                  </Link>
+                  <Outlet />
+              </CardActions>
+              </Card>
+      
+          </TabPanel>
+          </Box>
                     ))}
       
     </Box>
