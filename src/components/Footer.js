@@ -10,7 +10,7 @@ export default function Footer() {
     return (
         <Box className="Footer">
             
-                <Typography  sx={{ mb: 1.5 }} color="text.secondary">&copy;2021 Don Barto</Typography>
+                <Typography  sx={{ mb: 1.5 }} color="white">&copy;2021 Don Barto</Typography>
         </Box>
     )
 }
