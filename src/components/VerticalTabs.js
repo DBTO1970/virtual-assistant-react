@@ -10,7 +10,7 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
-
+import 'fontsource-roboto';
 
 function TabPanel(props) {
     
@@ -56,8 +56,7 @@ export default function VerticalTabs() {
 
   return (
       
-    <Box
-      sx={{ flexGrow: 1, bgcolor: 'background.paper', display: 'flex', height: 'auto' }}
+    <Box sx={{ flexGrow: 1, bgColor: 'background.paper', display: 'flex', height: 'auto', textAlign: 'justify', color: 'black', backgroundColor: 'white', padding: '20px', margin: '10px auto 10px auto', width: '60vw'}}
     >
       <Tabs
         orientation="vertical"
@@ -65,7 +64,7 @@ export default function VerticalTabs() {
         value={value}
         onChange={handleChange}
         aria-label="Vertical tabs"
-        sx={{ borderRight: 1, borderColor: 'divider', margin: '10px',padding: '5px', textAlign: 'left' }}
+        sx={{ borderRight: 1, borderColor: 'divider', padding: '5px', textAlign: 'left', margin: '10px auto 10px auto', width: '60vw' }}
       >
         <Tab label=" General " {...a11yProps(0)} />
         <Tab label=" Social  " {...a11yProps(1)} />

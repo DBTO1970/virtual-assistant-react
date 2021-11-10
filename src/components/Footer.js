@@ -5,6 +5,7 @@ import MiscellaneousServicesRoundedIcon from '@mui/icons-material/MiscellaneousS
 import ConnectWithoutContactRoundedIcon from '@mui/icons-material/ConnectWithoutContactRounded';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import 'fontsource-roboto';
 
 export default function Footer() {
     return (

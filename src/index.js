@@ -9,6 +9,7 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Services from './components/Services';
 import Service from './routes/serviceRoute';
+import 'fontsource-roboto';
 
 const rootElement = document.getElementById("root");
 

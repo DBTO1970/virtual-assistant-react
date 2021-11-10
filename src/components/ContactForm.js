@@ -9,17 +9,20 @@ import Input from '@mui/material/Input';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
+import 'fontsource-roboto';
 
 const ContactForm = () => {
     const [status, setStatus] = useState("Submit");
     const handleSubmit = async (e) => {
         e.preventDefault();
         setStatus("Sending...");
-        const { name, email, message } = e.target.elements;
+        const { name, email, message, datetime } = e.target.elements;
+        
         let details = {
             name: name.value,
             email: email.value,
-            message: message.value
+            message: message.value,
+            datetime: datetime,
         };
         let response = await fetch("http://localhost:5000/contactform", {
             method: "POST",
@@ -34,41 +37,50 @@ const ContactForm = () => {
     };
     
     return (
-        <Card variant="elevation">
-            <CardHeader title="Contact Form" />
-                
-            <CardContent>
-                <Box 
+        <Box sx={{textAlign: 'justify', bgcolor: 'background.paper', color: 'black', backgroundColor: 'white', padding: '20px', margin: '10px auto 10px auto', width: '60vw'}}
                     component="form"
-                    sx={{
-                        '& .MuiTextField-root': {m: 1, width: '25ch' },
-                    }}
+                   
                     noValidate
                     autoComplete="off"
                     onSubmit={handleSubmit}>
-                    <FormGroup row >
+            <Card variant="elevation">
+                <CardHeader title="Contact Form" />
+                    
+                <CardContent>
+                
+                    <FormGroup row sx={{paddingBottom: 5}}>
                         <FormLabel htmlFor="name">Name: </FormLabel>
                         <Input autoFocus variant="filled" type="text" id="name" required />
                     </FormGroup>
-                    <FormGroup row >
+                    <FormGroup row sx={{paddingBottom: 5}}>
                         <FormLabel htmlFor="email">Email: </FormLabel>
                         <Input variant="filled" type="email" id="email" required />
                     </FormGroup>
-                    <FormGroup row >
+                    <FormGroup row sx={{paddingBottom: 5}}>
                         <FormLabel htmlFor="message">Message: </FormLabel>
                         <TextField 
                             multiline 
                             variant="filled"
                             type="text"
-                            defaultValue="How may we assist?"
+                            placeholder="How may we assist?"
                             rows={6} id="message" required />
+                    </FormGroup>
+                    <FormGroup>
+                    <FormLabel >Schedule a Meeting: </FormLabel>
+                        <TextField 
+                            id="datetime"
+                            variant="outlined"
+                            color="secondary"
+                            type="datetime-local"
+                        />
                     </FormGroup>
                     <Button 
                         startIcon={<SendRoundedIcon />}
-                        variant="contained" type="submit" style={{backgroundColor: "lightgreen"}}>{status}</Button>
-                </Box>
+                        variant="contained" type="submit" style={{backgroundColor: "lightgreen", padding: 5, marginTop: 10 }}>{status}</Button>
+             
             </CardContent>
-    </Card>
+        </Card>
+    </Box>
     );
 };
 
