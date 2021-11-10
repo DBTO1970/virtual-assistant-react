@@ -25,7 +25,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
+        <Box sx={{ p: 3}}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -56,7 +56,7 @@ export default function VerticalTabs() {
 
   return (
       
-    <Box sx={{ flexGrow: 1, bgColor: 'background.paper', display: 'flex', height: 'auto', textAlign: 'justify', color: 'black', backgroundColor: 'white', padding: '20px', margin: '10px auto 10px auto', width: '60vw'}}
+    <Box sx={{ bgColor: 'background.paper', display: 'flex', height: 'auto', textAlign: 'justify', color: 'black', backgroundColor: 'white', padding: '20px', margin: '10px auto 10px auto', maxWidth: '60hw' }}
     >
       <Tabs
         orientation="vertical"
@@ -76,13 +76,14 @@ export default function VerticalTabs() {
       {services.map(service => (
         <Box>
       <TabPanel 
+          
           value={value} 
           index={service.number}
-          style={{ display: "block", margin: "1rem" }}
+          sx={{ display: 'block', padding: '20px' }}
           to={`/services/${service.number}`}
           key={service.number}
           >
-          <Card sx={{ minWidth: 275 }}>
+          <Card>
               
                   <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                   {service.nameLong}

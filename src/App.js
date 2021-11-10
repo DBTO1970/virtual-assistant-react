@@ -14,7 +14,7 @@ import 'fontsource-roboto';
 function App() {
   return (
     
-      <div className="App">
+      <div className="App" style={{ maxWidth: 960, marginLeft: 'auto', marginRight: 'auto' }}>
       <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
         <h2>Virtual Assistance!</h2>
