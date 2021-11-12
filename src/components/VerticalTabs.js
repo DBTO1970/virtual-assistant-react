@@ -10,7 +10,9 @@ import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
+import Grid from '@mui/material/Grid';
 import 'fontsource-roboto';
+
 
 function TabPanel(props) {
     
@@ -55,63 +57,66 @@ export default function VerticalTabs() {
   };
 
   return (
-      
-    <Box sx={{ bgColor: 'background.paper', display: 'flex', height: 'auto', textAlign: 'justify', color: 'black', backgroundColor: 'white', padding: '20px', margin: '10px auto 10px auto', maxWidth: '60hw' }}
-    >
-      <Tabs
-        orientation="vertical"
-        variant="scrollable"
-        value={value}
-        onChange={handleChange}
-        aria-label="Vertical tabs"
-        sx={{ borderRight: 1, borderColor: 'divider', padding: '5px', textAlign: 'left', margin: '10px auto 10px auto', width: '60vw' }}
+    <Grid container>
+      <Box sx={{ bgColor: 'background.paper', display: 'flex', height: 'auto', textAlign: 'justify', color: 'black', backgroundColor: 'white', padding: '20px', margin: '10px auto 10px auto', maxWidth: '60hw' }}
       >
-        <Tab label=" General " {...a11yProps(0)} />
-        <Tab label=" Social  " {...a11yProps(1)} />
-        <Tab label="Accounts " {...a11yProps(2)} />
-        <Tab label=" Editing " {...a11yProps(3)} />
-        <Tab label="   Web   " {...a11yProps(4)} />
-       
-      </Tabs>
-      {services.map(service => (
-        <Box>
-      <TabPanel 
-          
-          value={value} 
-          index={service.number}
-          sx={{ display: 'block', padding: '20px' }}
-          to={`/services/${service.number}`}
-          key={service.number}
-          >
-          <Card>
-              
-                  <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                  {service.nameLong}
-                  </Typography>
-                  <CardContent>
-                  <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                  {service.rate}
-                  </Typography>
-                  <Typography variant="body2">
-                  {service.description}
-                  <br />
-                  </Typography>
-              </CardContent>
-              <CardActions>
-              <Link 
-                  style={{ display: "block", margin: "1rem" }}
-                  to={'/contact'}
-                  key={service.number}
-                  ><Button size="small">Request a Quote</Button>
-                  </Link>
-                  <Outlet />
-              </CardActions>
-              </Card>
-      
-          </TabPanel>
-          </Box>
-                    ))}
-      
-    </Box>
+      <Grid item xs={6} md={6}>
+        <Tabs
+          orientation="vertical"
+          variant="scrollable"
+          value={value}
+          onChange={handleChange}
+          aria-label="Vertical tabs"
+          sx={{ borderRight: 1, borderColor: 'divider', padding: '5px', textAlign: 'left', margin: '10px auto 10px auto', width: '60vw' }}
+        >
+          <Tab label=" General " {...a11yProps(0)} />
+          <Tab label=" Social  " {...a11yProps(1)} />
+          <Tab label="Accounts " {...a11yProps(2)} />
+          <Tab label=" Editing " {...a11yProps(3)} />
+          <Tab label="   Web   " {...a11yProps(4)} />
+        
+        </Tabs>
+      </Grid>
+        {services.map(service => (
+          <Box>
+        <TabPanel 
+            
+            value={value} 
+            index={service.number}
+            sx={{ display: 'block', padding: '20px' }}
+            to={`/services/${service.number}`}
+            key={service.number}
+            >
+            <Card>
+                
+                    <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+                    {service.nameLong}
+                    </Typography>
+                    <CardContent>
+                    <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                    {service.rate}
+                    </Typography>
+                    <Typography variant="body2">
+                    {service.description}
+                    <br />
+                    </Typography>
+                </CardContent>
+                <CardActions>
+                <Link 
+                    style={{ display: "block", margin: "1rem" }}
+                    to={'/contact'}
+                    key={service.number}
+                    ><Button size="small">Request a Quote</Button>
+                    </Link>
+                    <Outlet />
+                </CardActions>
+                </Card>
+        
+            </TabPanel>
+            </Box>
+                      ))}
+        
+      </Box>
+    </Grid>
   );
 }

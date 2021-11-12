@@ -38,9 +38,7 @@ const ContactForm = () => {
     
     return (
         <Box sx={{textAlign: 'justify', bgcolor: 'background.paper', color: 'black', backgroundColor: 'white', padding: '20px', margin: '10px auto 10px auto', width: '60vw'}}
-                    component="form"
-                   
-                    noValidate
+                    component="form" 
                     autoComplete="off"
                     onSubmit={handleSubmit}>
             <Card variant="elevation">
