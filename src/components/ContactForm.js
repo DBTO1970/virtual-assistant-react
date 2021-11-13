@@ -25,7 +25,7 @@ const ContactForm = () => {
             message: message.value,
             datetime: datetime.value
         };
-        let response = await fetch("http://localhost:5000/contactform", {
+        let response = await fetch("https://virtual-assist.donbarto.com/contactform", {
             method: "POST",
             headers: {
                 "Content-Type": "Application/json",
@@ -34,6 +34,7 @@ const ContactForm = () => {
         });
         setStatus("Submit");
         let result = await response.json();
+        console.log(details.datetime);
         alert(result.status);
     };
     
@@ -71,7 +72,7 @@ const ContactForm = () => {
                             variant="outlined"
                             color="secondary"
                             type="datetime-local"
-                            
+                            sx={{ maxWidth: '40vw' }}
                         />
                     </FormGroup>
                     <Button 
