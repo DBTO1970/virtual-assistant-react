@@ -5,11 +5,6 @@ import 'fontsource-roboto';
 export default function Services () {
   
         return(
-            <div style={{ display: "flex" }}>
             <VerticalTabs />
-                
-            
-            </div>
-            
         );
 };

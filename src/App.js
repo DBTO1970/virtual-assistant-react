@@ -2,7 +2,6 @@ import React from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import './App.css';
 import Footer from './components/Footer';
-import Grid from '@mui/material/Grid';
 import logo from "./shared/assistant.png";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
@@ -14,7 +13,7 @@ import 'fontsource-roboto';
 
 function App() {
   return (
-    <Grid container>
+    
       
       <div className="App">
       <header className="App-header">
@@ -28,15 +27,15 @@ function App() {
           }}>
           
             <ButtonGroup variant="contained">
-              <Link to="/about" style={{textDecoration: "none"}}><Button md={3} startIcon={<InfoRoundedIcon />} variant="contained" className="fixed" style={{color: "black", backgroundColor: "lightgreen"}}>About</Button></Link>
+              <Link to="/about" style={{textDecoration: "none"}}><Button md={3} startIcon={<InfoRoundedIcon />} variant="contained" sx={{color: "gray", backgroundColor: "lightgreen"}}>About</Button></Link>
               <Link to="/services" style={{textDecoration: "none"}}>
                 <Button md={3}
                 startIcon={<MiscellaneousServicesRoundedIcon />}
-                variant="contained" style={{color: "black", backgroundColor: "lightgreen"}}>Services</Button></Link>
+                variant="contained" sx={{color: "gray", backgroundColor: "lightgreen", margin: "0 5px 0 5px"}}>Services</Button></Link>
               <Link to="/contact" style={{textDecoration: "none"}}>
                 <Button md={3} 
                   startIcon={<ConnectWithoutContactRoundedIcon />}
-                  variant="contained" style={{color: "black", backgroundColor: "lightgreen"}}>Contact</Button></Link>
+                  variant="contained" sx={{color: "gray", backgroundColor: "lightgreen"}}>Contact</Button></Link>
             </ButtonGroup>
           
           
@@ -47,7 +46,7 @@ function App() {
           <Footer />
       </div>
       
-      </Grid>
+   
     
   );
 }

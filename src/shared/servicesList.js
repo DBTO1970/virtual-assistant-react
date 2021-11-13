@@ -19,7 +19,7 @@ let services = [
         number: 2,
         name: "Accounts",
         nameLong: "Basic Bookkeeping and Accounting",
-        description:"Invoicing, account data entry, accounts aging, and other general accounting-related tasks",
+        description:"Invoicing, account data entry, accounts aging, accounts receivable, and other general accounting-related tasks",
         rate: "$25-$50/hour",
         featured: true        
     },

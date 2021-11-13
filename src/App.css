@@ -57,3 +57,14 @@
     -o-transform: rotate(420deg);
 }
 }
+
+Button {
+  color: gray;
+  background-color: lightgreen;
+
+}
+
+Button:hover {
+  color: white;
+  background: lightsteelblue;
+}

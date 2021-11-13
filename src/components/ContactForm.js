@@ -11,6 +11,7 @@ import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
 import 'fontsource-roboto';
 
+
 const ContactForm = () => {
     const [status, setStatus] = useState("Submit");
     const handleSubmit = async (e) => {
@@ -22,7 +23,7 @@ const ContactForm = () => {
             name: name.value,
             email: email.value,
             message: message.value,
-            datetime: datetime,
+            datetime: datetime.value
         };
         let response = await fetch("http://localhost:5000/contactform", {
             method: "POST",
@@ -37,7 +38,7 @@ const ContactForm = () => {
     };
     
     return (
-        <Box sx={{textAlign: 'justify', bgcolor: 'background.paper', color: 'black', backgroundColor: 'white', padding: '20px', margin: '10px auto 10px auto', width: '60vw'}}
+        <Box sx={{textAlign: 'justify', bgcolor: 'background.paper', alignItems: 'center', alignSelf: 'center',color: 'black', backgroundColor: 'white', padding: '20px', margin: '10px auto 10px auto' }}
                     component="form" 
                     autoComplete="off"
                     onSubmit={handleSubmit}>
@@ -47,15 +48,15 @@ const ContactForm = () => {
                 <CardContent>
                 
                     <FormGroup row sx={{paddingBottom: 5}}>
-                        <FormLabel htmlFor="name">Name: </FormLabel>
+                        <FormLabel htmlFor="name" sx={{ marginRight: '10px'}}>Name: </FormLabel>
                         <Input autoFocus variant="filled" type="text" id="name" required />
                     </FormGroup>
                     <FormGroup row sx={{paddingBottom: 5}}>
-                        <FormLabel htmlFor="email">Email: </FormLabel>
+                        <FormLabel htmlFor="email" sx={{ marginRight: '10px'}}>Email: </FormLabel>
                         <Input variant="filled" type="email" id="email" required />
                     </FormGroup>
                     <FormGroup row sx={{paddingBottom: 5}}>
-                        <FormLabel htmlFor="message">Message: </FormLabel>
+                        <FormLabel htmlFor="message" sx={{ marginRight: '10px'}}>Message: </FormLabel>
                         <TextField 
                             multiline 
                             variant="filled"
@@ -64,17 +65,18 @@ const ContactForm = () => {
                             rows={6} id="message" required />
                     </FormGroup>
                     <FormGroup>
-                    <FormLabel >Schedule a Meeting: </FormLabel>
+                    <FormLabel sx={{ marginRight: '10px'}}>Schedule a Meeting: </FormLabel>
                         <TextField 
                             id="datetime"
                             variant="outlined"
                             color="secondary"
                             type="datetime-local"
+                            
                         />
                     </FormGroup>
                     <Button 
                         startIcon={<SendRoundedIcon />}
-                        variant="contained" type="submit" style={{backgroundColor: "lightgreen", padding: 5, marginTop: 10 }}>{status}</Button>
+                        variant="contained" type="submit" sx={{marginTop: '5px',color: "gray", backgroundColor: "lightgreen" }}>{status}</Button>
              
             </CardContent>
         </Card>

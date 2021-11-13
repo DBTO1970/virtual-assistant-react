@@ -58,32 +58,32 @@ export default function VerticalTabs() {
 
   return (
     <Grid container>
-      <Box sx={{ bgColor: 'background.paper', display: 'flex', height: 'auto', textAlign: 'justify', color: 'black', backgroundColor: 'white', padding: '20px', margin: '10px auto 10px auto', maxWidth: '60hw' }}
+      <Box sx={{ bgColor: 'background.paper', display: 'flex', height: 'auto', textAlign: 'center', color: 'black', backgroundColor: 'white', padding: '20px', margin: '10px auto 10px auto' }}
       >
-      <Grid item xs={6} md={6}>
+      <Box>
         <Tabs
           orientation="vertical"
           variant="scrollable"
           value={value}
           onChange={handleChange}
           aria-label="Vertical tabs"
-          sx={{ borderRight: 1, borderColor: 'divider', padding: '5px', textAlign: 'left', margin: '10px auto 10px auto', width: '60vw' }}
+          sx={{ borderRight: 1, borderColor: 'divider', padding: '5px', textAlign: 'right', margin: '10px auto 10px auto' }}
         >
           <Tab label=" General " {...a11yProps(0)} />
           <Tab label=" Social  " {...a11yProps(1)} />
-          <Tab label="Accounts " {...a11yProps(2)} />
+          <Tab label=" Accounts " {...a11yProps(2)} />
           <Tab label=" Editing " {...a11yProps(3)} />
           <Tab label="   Web   " {...a11yProps(4)} />
         
         </Tabs>
-      </Grid>
+      </Box>
         {services.map(service => (
           <Box>
-        <TabPanel 
+            <TabPanel 
             
             value={value} 
             index={service.number}
-            sx={{ display: 'block', padding: '20px' }}
+            sx={{ padding: '20px' }}
             to={`/services/${service.number}`}
             key={service.number}
             >
