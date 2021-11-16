@@ -25,7 +25,7 @@ const ContactForm = () => {
             message: message.value,
             datetime: datetime.value
         };
-        let response = await fetch("https://virtual-assist.donbarto.com/contactform", {
+        let response = await fetch("https://dbcom-server.donbarto.com:5000/contactform", {
             method: "POST",
             headers: {
                 "Content-Type": "Application/json",
